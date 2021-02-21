@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/main_color"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Keyword"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:textSize="30dp"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_below="@id/Keyword"
+        android:background="#98BD9A">
+    </LinearLayout>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:layout_below="@+id/Keyword"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:id="@+id/Swipe_layout">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Checked_listView"
+        android:scrollbars="vertical"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/holo_green_light"
+        android:visibility="visible"
+        tools:listitem="@layout/category_list"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </androidx.recyclerview.widget.RecyclerView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>
